@@ -19,10 +19,10 @@ const db = require("./config/keys").mongoURI;
 mongoose
   .connect(
     db,
-    { useNewUrlParser: true }
+    { useNewUrlParser: true ,  useUnifiedTopology: true }
   )
   .then(() => console.log("MongoDB successfully connected"))
   .catch(err => console.log(err));
-  
+
 const port = 5000; // port selection
 app.listen(port, () => console.log(`Server up and running on port ${port} !`));
